@@ -1,9 +1,11 @@
 # Learning Models
-TH Rosenheim  
-11/23/2022  
+TH Rosenheim   
+11/30/2022  
 
-## Steps to launch the Jupyter Notebook
-To set up your python environment to run the code in this repository, follow the instructions below.
+This Jupyter Notebook is based on Harvards CS109 Data Science 2015 lecture "Learning Models": http://cs109.github.io/2015/pages/videos.html  
+
+## Setup
+To set up your python environment and to run the code in this repository, follow the instructions below.
 
 1. Download Conda
 
@@ -22,7 +24,7 @@ To set up your python environment to run the code in this repository, follow the
 
 1. Download repository
     ```bash
-    cd path/to/directory
+    cd path/to/folder
     git clone https://github.com/clauszitzelsberger/LearningModels.git
     ```
 
@@ -35,4 +37,9 @@ To set up your python environment to run the code in this repository, follow the
 1. Launch Jupyter Notebook
     ```
     jupyter notebook
+    ```
+
+1. Launch Presentation
+    ```
+    jupyter nbconvert LearningModels.ipynb --to slides --post serve
     ```
