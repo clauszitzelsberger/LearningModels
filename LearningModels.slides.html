@@ -14667,7 +14667,7 @@ div.jp-OutputPrompt {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;a title=&quot;United States Congress, Public domain, via Wikimedia Commons&quot; href=&quot;https://commons.wikimedia.org/wiki/File:Mitt_Romney_official_US_Senate_portrait_(3x4a).jpg&quot;&gt;&lt;img width=&quot;256&quot; alt=&quot;Mitt Romney official US Senate portrait (3x4a)&quot; src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Mitt_Romney_official_US_Senate_portrait_</span><span class="si">%283x</span><span class="s1">4a%29.jpg/256px-Mitt_Romney_official_US_Senate_portrait_</span><span class="si">%283x</span><span class="s1">4a%29.jpg&quot;&gt;&lt;/a&gt;&#39;</span><span class="p">))</span>
@@ -14723,14 +14723,14 @@ You want to predict the outcome of the election or more specifically the <strong
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here economic and sociological factors are important, such as <strong>poverty</strong>, <strong>race</strong> and <strong>religiousness</strong>.</p>
-<p>There are historical correlations between such factors and election outcomes which we might want to incorporate into our model. An example of such a model might be:</p>
+<p>You know that election outcomes are depending on factors like <strong>poverty</strong>, <strong>race</strong>, <strong>religiousness</strong> and so on.</p>
+<p>You could say:</p>
 <p><em>The odds of Romney winning are a function of population religiosity, race, poverty, education, and other social and economic indicators.</em></p>
-<p>We'll represent the <strong>variable being predicted</strong>, such as the probability of voting for Romney, by the letter $y$, and the <strong>features</strong> we use as an input in this probability by the letter $x$.<br>
+<p>We can write:</p>
+$$ y = f(x) $$<p>$y$: the <strong>variable being predicted</strong>, such as the probability of voting for Romney<br>
+$x$ the <strong>features</strong> we use as an input<br>
 This $x$ could be multi-dimensional, with $x_1$ being poverty, $x_2$ being race, and so on.</p>
-<p>We then write:</p>
-$$ y = f(x) $$<p>and our jobs is to take $x$ such as data from the census about race, religiousness, and so on, and $y$ as previous elections and surveys, and to make a predictive model for the elections.</p>
-<p>This means we wish to estimate $f(x)$.</p>
+<p>Our goal is to estimate $f(x)$.</p>
 
 </div>
 </div>
@@ -14778,7 +14778,7 @@ $$ y = f(x) $$<p>and our jobs is to take $x$ such as data from the census about 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;./images/counties_1.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 300px;&quot;/&gt; &lt;p&gt;&lt;b&gt;Created with MapChart.&lt;/b&gt;&lt;/p&gt; &lt;a href=&quot;https://www.mapchart.net/usa-counties.html&quot;&gt;https://www.mapchart.net/usa-counties.html&lt;/a&gt;&#39;</span><span class="p">))</span>
@@ -14821,9 +14821,9 @@ $$ y = f(x) $$<p>and our jobs is to take $x$ such as data from the census about 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>You're only able to collect a limited number of data points.<br>
-Let's imagine you're visiting <strong>30 counties</strong> all over the US and ask people who they will vote for in the upcoming election.<br>
-The fraction of religios people in a county can be obtained from the census.</p>
-<p>The result is a sample $\cal{D}$ of 30 data points. Such data is called <strong>in-sample data</strong>. Contrastingly, the entire population of data points is also called <strong>out-of-sample data</strong>.</p>
+Let's imagine you're visiting <strong>30 counties</strong> all over the US and ask people who they will vote for in the upcoming election.</p>
+<p>The result is a sample $\cal{D}$ of 30 data points. Such data is called <strong>in-sample data</strong>.<br>
+Contrastingly, the entire population of data points is also called <strong>out-of-sample data</strong>.</p>
 
 </div>
 </div>
@@ -14833,138 +14833,7 @@ The fraction of religios people in a county can be obtained from the census.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>promney</th>
-      <th>rfrac</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.108800</td>
-      <td>0.070000</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.170217</td>
-      <td>0.140000</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.171891</td>
-      <td>0.260000</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.163263</td>
-      <td>0.270000</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.242605</td>
-      <td>0.344716</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>30</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div></div></section></section><section><section><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">);</span>
@@ -15034,7 +14903,7 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -15087,8 +14956,9 @@ class="
 <p>Let's recap:<br>
 You want to predict the <strong>probability of voting for Mitt Romney in a county</strong>. This is our $y$.</p>
 <p>To achieve this, you defined a simple model $ y = f(x) $ where the probability of voting for Romney is a function of how religious the population in a county is.</p>
-<p>You then collected a sample $\cal{D}$ of 30 data points. You now have $x$ and $y$ pairs like $(x_1, y_1), (x_2, y_2), ...$, but you still don't know $f$.</p>
-<p>You now want to find a function $\hat{f}$ that might have generated these 30 points of sample data in the <em>hope</em> that this function might approximate $f$ well, and provide us a <strong>predictive model</strong> for future data. This is known as <strong>fitting</strong> the data.</p>
+<p>You then collected a sample $\cal{D}$ of 30 data points.</p>
+<p>But you still don't know $f$.</p>
+<p>You now want to find a function $\hat{f}$ that might have generated these 30 points of sample data in the <em>hope</em> that this function might approximate $f$ well, and provide us a <strong>predictive model</strong> for future data.</p>
 
 </div>
 </div>
@@ -15100,7 +14970,7 @@ You want to predict the <strong>probability of voting for Mitt Romney in a count
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Learn-the-best-fit">Learn the best fit<a class="anchor-link" href="#Learn-the-best-fit">&#182;</a></h3>
+<h3 id="Let's-try-to-find-the-best-fit">Let's try to find the best fit<a class="anchor-link" href="#Let's-try-to-find-the-best-fit">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15134,7 +15004,7 @@ $$ y = f(x) = \beta_0 + \beta_1 x $$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[73]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;./images/linreg.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 200px;&quot;/&gt;&#39;</span><span class="p">))</span>
@@ -15210,7 +15080,7 @@ $$ \arg\min_{\hat{f}(x)} L_{\cal{D}}(\hat{f}(x)).$$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">f_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
@@ -15274,7 +15144,8 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Bias">Bias<a class="anchor-link" href="#Bias">&#182;</a></h3><p>We need to keep in mind, that there is an underlying relationship between $x$ and $y$ that might not be linear, but of higher order. Consider a general case in the figure below, where a curvy $f$ is approximated by a function $\hat{f}$ which just does not have the wiggling that $f$ has.</p>
+<p><strong>What if the underlying relationship between $x$ and $y$ is not linear, but more complex?</strong><br>
+Let's consider a general case in the figure below:</p>
 
 </div>
 </div>
@@ -15284,10 +15155,10 @@ class="
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[75]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;./images/bias.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 200px;&quot;/&gt;&#39;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;img src=&quot;./images/bias.png&quot; alt=&quot;Drawing&quot; style=&quot;width: 300px;&quot;/&gt;&#39;</span><span class="p">))</span>
 </pre></div>
 
      </div>
@@ -15310,7 +15181,7 @@ class="
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
-<img src="./images/bias.png" alt="Drawing" style="width: 200px;"/>
+<img src="./images/bias.png" alt="Drawing" style="width: 300px;"/>
 </div>
 
 </div>
@@ -15326,7 +15197,8 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is always going to be an error then, in approximating $f$ by $\hat{f}$. This <em>approximation error</em> is shown in the figure by the blue shaded region, and its called <strong>bias</strong>. The name comes from the fact that $\hat{f}$ just does not wiggle the way $f$ does (nothing will make a straight line curve). This happens when the model is too simple.<br>
+<p>If the underlying relationship is more complex than the model allows, there is always going to be an error then, in approximating $f$ by $\hat{f}$.<br>
+This is called <strong>bias</strong>.<br>
 A biased models leads to <strong>underfitting</strong>.</p>
 
 </div>
@@ -15524,11 +15396,11 @@ Loss of best 20th order polynomial fit: 0.03680751771730077
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Let's recall what you wanted to do</strong></p>
-<p>We have a target function $f(x)$ that we do not know.<br>
-But we do have a sample of data points from it, $(x_1,y_1), (x_2,y_2), ..., (x_n,y_n)$. We call this the <strong>sample</strong> $\cal{D}$.<br>
+<p>We have a <strong>target function</strong> $f(x)$ that we do not know.<br>
+But we do have a <strong>sample</strong> of data points $\cal{D}$.<br>
 We are interested in using this sample to estimate a function $\hat{f}$ to approximate the function $f$, and which can be used for <strong>prediction</strong> at <strong>new data points</strong>, or on the <strong>entire population</strong>.</p>
 <p>To do this, we use an algorithm, called the <strong>learner</strong>, which chooses functions from a set of possible functions and computes a loss $L$ (like the sum of the squared distance over all points in the data set) for each of these functions. It then chooses the function $\hat{f}$ which <strong>minimizes</strong> this loss amonst all the functions.</p>
-<p>Here our learner is called <strong>Polynomial Regression</strong>, and it takes polynomials of order $j$, minimizes the "squared-error" loss measure, and spits out a best-fit hypothesis $\hat{f}_j$.</p>
+<p>Here our learner is called <strong>Polynomial Regression</strong>, and it takes polynomials of order $j$, minimizes the loss measure, and spits out a best-fit hypothesis $\hat{f}_j$.</p>
 
 </div>
 </div>
@@ -15543,46 +15415,12 @@ We are interested in using this sample to estimate a function $\hat{f}$ to appro
 <p>So again:<br>
 You want to make good predictions on <strong>new data points</strong>.</p>
 <p>You are trying to achive this by minimizing the loss on the set of data points we have (our sample) to find $\hat{f}$.</p>
-<p>You then <em>hope</em> that the loss doesn't particulary change when we apply $\hat{f}$ on new data points or on the entire population.</p>
+<p>You then <em>hope</em> that the loss doesn't particulary change when we apply $\hat{f}$ on new data points.</p>
 
 </div>
 </div>
 </div>
 </div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="The-role-of-sampling">The role of sampling<a class="anchor-link" href="#The-role-of-sampling">&#182;</a></h3><p>An important pre-condition is that the sample is <strong>representative of the population</strong>.</p>
-<p>So if there are only highly religious counties representive in our sample (and we know that there are counties which aren't at all religious) we might run into a problem, i.e. the sample is not representative and the model we trained with the sample will do a bad job when applied on the entire population.</p>
-<p><details>
-    <summary>
-        <font size=\"3\" color="green" ><b>What else is important?</b></font>
-    </summary>
-    <p>
-    <ul>
-        <li>The size of the sample</li>
-    </ul>
-    </p></p>
-
-</div>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You probably noticed that I used weasel words like "<em>might</em>" and "<em>hope</em>" when saying that representative sampling combined with the approach of minimizing the loss is what we need to learn a model.</p>
-
-</div>
-</div>
-</div>
-</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15594,14 +15432,14 @@ You want to make good predictions on <strong>new data points</strong>.</p>
 </div>
 </div>
 </div>
-</div></div><div class="fragment">
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>So what's the problem?</strong></p>
+<p><strong>Why is this a problem?</strong></p>
 
 </div>
 </div>
@@ -15613,9 +15451,8 @@ You want to make good predictions on <strong>new data points</strong>.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Noise">Noise<a class="anchor-link" href="#Noise">&#182;</a></h3><p>Consider for example two customers of a bank with identical credit histories and salaries. One defaults on their mortgage, and the other does not. In this case we have identical $x = (credit, salary)$ for these two customers, but different $y$, which is a variable that is 1 if the customer defaulted and 0 otherwise. The true $y$ here might be a function of other features, such as marital strife, sickness of parents, etc. But, as the bank, we might not have this information. So we get different $y$ for different customers at the information $x$ that we possess.</p>
+<h3 id="Noise">Noise<a class="anchor-link" href="#Noise">&#182;</a></h3><p>Consider for example two customers of a bank with identical credit histories and salaries. One defaults on their mortgage, and the other does not. In this case we have identical $x = (age, salary)$ for these two customers, but different $y$, which is a variable that is 1 if the customer defaulted and 0 otherwise. The true $y$ here might be a function of other features, such as marital strife, sickness of parents, etc. But, as the bank, we might not have this information. So we get different $y$ for different customers at the information $x$ that we possess.</p>
 <p>A similar thing might be happen in the election example, where we have modelled the probability of voting for Romney as a function of religiousness of the county. There are <strong>many other variables we might not have measured</strong>, such as the majority race in that county, that affect $y$.</p>
-<p>It gets worse. When pollsters estimate the number of people voting for a particular candidate, they only use finite samples of voters. So there is a 4-6\% polling error in any of these estimates. This "sampling noise" adds to the noisiness of the $y$'s.</p>
 
 </div>
 </div>
@@ -15783,20 +15620,7 @@ class="
 
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The best-fit 20th order polynomial does a reasonable job fitting the in-sample data, and is even well behaved in the middle where we have a lot of in-sample data points. But at places with less in-sample data points, the polynomial wiggles maniacally.</p>
-<p>This indicates that we fitted to the noise and this is a danger you will encounter again and again in learning. Its called <strong>overfitting</strong>. The take away lesson from this is that we must further ensure that our <strong>model does not fit the noise</strong>.</p>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -15804,10 +15628,10 @@ class="
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Let's recap:<br>
-We have learned the meaning of <strong>overfitting</strong> and <strong>underfitting</strong>.</p>
+We have illustrated the terms <strong>overfitting</strong> and <strong>underfitting</strong>.</p>
 <ul>
 <li>Overfitting: when model fits the noise  </li>
-<li>Underfitting: when model cannot capture the underlying relationship or trend of the data.  </li>
+<li>Underfitting: when model cannot capture the underlying relationship or trend of the data (when it is biased).  </li>
 </ul>
 
 </div>
@@ -16079,19 +15903,7 @@ class="
 
 </div>
 
-</div><div class="fragment">
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In the right panel we plot the coefficients of the 20th order polynomial fits. This is why we use the word "variance": the spread in the values of the middle coefficients about their means is of the order $10^{10}$ (the vertical height of the bulges), with huge outliers!! The 20th order polynomial fits are a disaster!</p>
-
-</div>
-</div>
-</div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -16100,8 +15912,7 @@ class="
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Let's recap:</p>
 <ul>
-<li>You learned the basic formulation of the learning problem and a strategy using minimization of distance (called loss) to find the best fit model for the target function. </li>
-<li>You learned the effect of noise on this fit, and the issues that crop up in learning target functions from data, chiefly the problem of overfitting to this noise. </li>
+<li>You learned the effect of noise on this fit, chiefly the problem of overfitting to this noise. </li>
 <li>You learned the meaning of over- and underfitting as well as bias and variance</li>
 </ul>
 
@@ -16145,7 +15956,7 @@ class="
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We already did it. We realized that the 20th order polynomial fit was pretty bad, once we computed the loss of the fit on new data.<br>
-As we ususally only have our sample, we need to hold back some of our sample, and test the performance of our learner by trying it out on this held back part! Perhaps we can compute the loss on the held-out part, or "test" part of our sample, and have something to say about the out-of-sample error.</p>
+As we ususally only have our sample, we need to hold back some of our sample, and test the performance of our model by trying it out on this held back part!</p>
 
 </div>
 </div>
@@ -16157,7 +15968,7 @@ As we ususally only have our sample, we need to hold back some of our sample, an
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Testing-and-Training-Sets">Testing and Training Sets<a class="anchor-link" href="#Testing-and-Training-Sets">&#182;</a></h3><p>Let us introduce some new terminology. We take the sample of data $\cal{D}$ that we have been given (our in-sample set) and split it into two parts:</p>
+<h3 id="Training-and-Testing--Sets">Training and Testing  Sets<a class="anchor-link" href="#Training-and-Testing--Sets">&#182;</a></h3><p>Let us introduce some new terminology. We take the sample of data $\cal{D}$ that we have been given (our in-sample set) and split it into two parts:</p>
 <ol>
 <li>The <strong>training set</strong>, which is the part of the data we use to fit a model</li>
 <li>The <strong>testing set</strong>, a smaller part of the data set which we use to see how good our fit was.</li>
@@ -16692,12 +16503,12 @@ class="
 </ul>
 </li>
 <li>Formulated a model<ul>
-<li>factors which affects the outcome of the election</li>
+<li>what are factors which affect the outcome of the election?</li>
 <li>$y = f(x)$ with x fraction of religious people in a county</li>
 </ul>
 </li>
 <li>Gathered sample data $\cal{D}$</li>
-<li>Fitting the data<ul>
+<li>Fitted the data<ul>
 <li>Goal: getting $\hat{f}$ which is an estimation of $f$ by using the sample data</li>
 <li>Started by fitting a straight line</li>
 </ul>
