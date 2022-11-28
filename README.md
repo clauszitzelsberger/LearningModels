@@ -12,8 +12,8 @@ To set up your python environment and to run the code in this repository, follow
 1. Create (and activate) a new environment with Python 3.6.
 
 	```bash
-	conda create --name name python=3.6
-	conda activate name
+	conda create --name learningmodels python=3.6
+	conda activate learningmodels
 	```
 
 1. Install Jupyter
