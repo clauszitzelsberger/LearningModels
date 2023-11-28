@@ -1,6 +1,6 @@
 # Learning Models
 TH Rosenheim   
-06/29/2023  
+11/29/2023  
 
 This Jupyter Notebook is based on Harvards CS109 Data Science 2015 lecture "Learning Models": http://cs109.github.io/2015/pages/videos.html  
 
